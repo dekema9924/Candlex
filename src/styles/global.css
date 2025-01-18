@@ -5,7 +5,18 @@
 
 @layer base{
     .linkStyle{
-        @apply uppercase text-sm font-defaultFont mx-2
+        @apply uppercase text-sm font-defaultFont mx-2 sm:text-2xl
     }
+    .accordianBtn{
+        @apply border-2  sm:mb-0 cursor-pointer rounded-2xl w-80 sm:w-24  h-14 font-bold capitalize border-[#E9DBD0]
+    }
+    .activeBtn{
+        @apply sm:mb-0 cursor-pointer rounded-2xl  h-14 font-bold capitalize bg-black text-white sm:w-40 text-sm transition-all duration-700
+    }
+    .activeAccordian{
+        @apply h-24  transition-all duration-500
+    }
+
+
  
 }

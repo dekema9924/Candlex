@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 body{
     font-family: "Zilla Slab", serif;
     font-weight: 400;
@@ -11,3 +12,24 @@ body{
 *{
     border: 2px solid red;
 }
+
+
+
+.bounce{
+    animation-name: bounceAnimation;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes bounceAnimation {
+    0%, 100% {
+        transform: translateY(-20%);
+        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+      }
+      50% {
+        transform: translateY(0);
+        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+      }
+}
+
