@@ -4,7 +4,6 @@ import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import PermIdentityOutlinedIcon from '@mui/icons-material/PermIdentityOutlined';
 import LocalMallOutlinedIcon from '@mui/icons-material/LocalMallOutlined';
 import { Box } from "@mui/material";
-import LandingPage from "./Home/LandingPage";
 
 function Header() {
     const [hamburgerMenuIsClicked, setHamburgerMenuClicked] = useState(false)
@@ -45,7 +44,7 @@ function Header() {
                 <div className="w-11/12  h-full  sm:w-full">
 
                     <div className="flex items-center  h-10 justify-between">
-                        <p className="font-bold italic  ml-10">Candl<span className="font-normal text-xl">ex</span></p>
+                        <Link to={'/'} className="font-bold italic  ml-10">Candl<span className="font-normal text-xl">ex</span></Link>
                         <div className="flex gap-4 items-center justify-between pr-4  ">
                             <Box className='sm:hidden cursor-pointer'><SearchOutlinedIcon /></Box>
                             <Box className='sm:hidden cursor-pointer'><PermIdentityOutlinedIcon /></Box>
@@ -56,14 +55,13 @@ function Header() {
 
                 </div>
             </header>
-            <ul className={!hamburgerMenuIsClicked ? "absolute w-96 right-[800px] transition-all duration-700 text-black h-[100vh] sm:flex hidden justify-center gap-10 items-center pl-2 bg-[#FBEDD3] flex-col" : "w-96 text-black h-[100vh] sm:flex hidden justify-center gap-10  items-center pl-2 bg-[#FBEDD3] flex-col rounded-4xl transition-all duration-700 absolute right-[90px]"}>
-                <Link className="linkStyle" to={'/shop'}>Shop</Link>
-                <Link className="linkStyle" to={'/about'}>About</Link>
-                <Link className="linkStyle" to={'/blog'}>Blog</Link>
-                <Link className="linkStyle" to={'/testimonial'}>Testimonial</Link>
+            <ul className={!hamburgerMenuIsClicked ? "absolute w-96 right-[800px] transition-all duration-700 text-black h-[100vh] sm:flex hidden justify-center gap-10 items-center pl-2 bg-[#FBEDD3] flex-col z-50" : "w-96 z-50 text-black h-[100vh] sm:flex hidden justify-center gap-10  items-center pl-2 bg-[#FBEDD3] flex-col rounded-4xl transition-all duration-700 absolute right-[120px]"}>
+                <Link onClick={()=>setHamburgerMenuClicked(false)} className="linkStyle" to={'/shop'}>Shop</Link>
+                <Link onClick={()=>setHamburgerMenuClicked(false)} className="linkStyle" to={'/about'}>About</Link>
+                <Link onClick={()=>setHamburgerMenuClicked(false)} className="linkStyle" to={'/blog'}>Blog</Link>
+                <Link onClick={()=>setHamburgerMenuClicked(false)} className="linkStyle" to={'/testimonial'}>Testimonial</Link>
                 <button className="w-24 font-bold border-2 border-gray-500 bg-transparent h-8 rounded-3xl ">Log In</button>
             </ul>
-            <LandingPage />
 
 
         </>

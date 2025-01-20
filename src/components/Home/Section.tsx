@@ -1,6 +1,5 @@
 
 
-import React from 'react'
 import mediate2 from '../../public/Images/meditate2.png'
 import meditateImg from '../../public/Images/meditateImg.png'
 import candleImg from '../../public/Images/candleImg.png'
